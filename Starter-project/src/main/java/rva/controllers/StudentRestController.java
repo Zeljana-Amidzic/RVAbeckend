@@ -77,8 +77,8 @@ public class StudentRestController {
 		}
 		return new ResponseEntity<Student>(HttpStatus.CONFLICT);
 	}
-	
-	@PutMapping("student/{id}")
+	//@PutMapping("student/{id}")
+	@PutMapping("student")
 	@ApiOperation(value="Modifikacija studenta koji postoji u bazi podataka")
 	public ResponseEntity<Student> updateStudent(@RequestBody Student student){
 		if(!studentRepository.existsById(student.getId()))
