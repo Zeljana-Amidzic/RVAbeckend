@@ -39,6 +39,7 @@ public class Departman implements Serializable {
 	private List<Student> students;
 
 	public Departman() {
+		
 	}
 
 	public Integer getId() {

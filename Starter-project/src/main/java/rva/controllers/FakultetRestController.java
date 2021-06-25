@@ -72,9 +72,12 @@ public class FakultetRestController {
 	@DeleteMapping("fakultet/{id}")
 	@ApiOperation(value="Brise fakultet na osnovu prosledjene vrednosti za id")
 	public ResponseEntity<Fakultet> deleteFakultet(@PathVariable Integer id) {
-		if(!fakultetRepository.existsById(id))
+		if(!fakultetRepository.existsById(id)) {
 			return new ResponseEntity<Fakultet>(HttpStatus.NO_CONTENT);
+		} 
+		
 		fakultetRepository.deleteById(id);
+		
 		if(id == -100)
 			jdbcTemplate.execute("INSERT INTO \"fakultet\" (\"id\", \"naziv\", \"sediste\")"
 					+ "VALUES (-100, 'Naziv test', 'Sediste test') ");
