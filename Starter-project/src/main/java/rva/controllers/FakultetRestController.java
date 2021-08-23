@@ -20,8 +20,8 @@ import io.swagger.annotations.ApiOperation;
 import rva.repository.FakultetRepository;
 import rva.jpa.Fakultet;
 
-@CrossOrigin
 @RestController
+@CrossOrigin
 @Api(tags = {"Fakultet CRUD operacije"})
 public class FakultetRestController {
 
@@ -57,7 +57,6 @@ public class FakultetRestController {
 			return new ResponseEntity<Fakultet>(HttpStatus.OK);
 		}
 		return new ResponseEntity<Fakultet>(HttpStatus.CONFLICT);
-			
 	}
 	
 	@PutMapping("fakultet")

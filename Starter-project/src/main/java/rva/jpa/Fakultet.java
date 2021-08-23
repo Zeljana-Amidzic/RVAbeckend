@@ -28,9 +28,10 @@ public class Fakultet implements Serializable {
 
 	private String sediste;
 
-	@JsonIgnore
+	//@JsonIgnore
 	//bi-directional many-to-one association to Departman
 	@OneToMany(mappedBy="fakultet", cascade = {CascadeType.DETACH, CascadeType.REMOVE})
+	@JsonIgnore
 	private List<Departman> departmans;
 
 	public Fakultet() {
